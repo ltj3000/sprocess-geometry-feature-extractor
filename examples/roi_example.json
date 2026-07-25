@@ -1,0 +1,18 @@
+﻿{
+  "example": {
+    "grd": "/home/tcad/STDB/FDSOI_RLPX_v2/n20_current_dfise.grd",
+    "target_region": "Nitride_1.2",
+    "target_material": "Nitride",
+    "roi": {
+      "xmin": -0.031,
+      "xmax": 0.0,
+      "ymin": 0.01,
+      "ymax": 0.0225
+    }
+  },
+  "notes": [
+    "target_region must match the region name inside the DF-ISE .grd",
+    "target_material must match the material name carried by the target boundary vertices",
+    "ROI should be rough rather than overly tight"
+  ]
+}
