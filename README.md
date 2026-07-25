@@ -91,11 +91,11 @@ It will:
 - Python 3 available on the Sentaurus VM
 - access to the DF-ISE `.grd` file
 
-## Example: Local Python Usage
+## Example: Local Python Usage`n`nThis is only an example. Replace the `.grd` path, target region/material, and ROI with your own project values.
 
 ```bash
 python scripts/extract_material_vertices.py \
-  --grd /home/tcad/STDB/FDSOI_RLPX_v2/n20_current_dfise.grd \
+  --grd /path/to/your_project/n20_current_dfise.grd \
   --target-region Nitride_1.2 \
   --target-material Nitride \
   --xmin -0.031 --xmax 0.0 --ymin 0.01 --ymax 0.0225 \
@@ -115,7 +115,7 @@ powershell -ExecutionPolicy Bypass -File \
   "scripts/invoke-remote-sprocess-geometry-feature-extractor.ps1" \
   -HostAlias sentaurus-vm \
   -RemoteWorkDir /home/tcad/STDB/geometry_skill_run \
-  -GrdPath /home/tcad/STDB/FDSOI_RLPX_v2/n20_current_dfise.grd \
+  -GrdPath /path/to/your_project/n20_current_dfise.grd \
   -TargetRegion Nitride_1.2 \
   -TargetMaterial Nitride \
   -XMin -0.031 -XMax 0.0 -YMin 0.01 -YMax 0.0225
@@ -188,3 +188,4 @@ The feature JSON contains:
 ## License
 
 MIT
+
