@@ -91,11 +91,34 @@ It will:
 - Python 3 available on the Sentaurus VM
 - access to the DF-ISE `.grd` file
 
-## Example: Local Python Usage`n`nThis is only an example. Replace the `.grd` path, target region/material, and ROI with your own project values.
+## Example: Local Python Usage
+
+### Generic Template
+
+Replace the `.grd` path, target region/material, and ROI with your own project values.
 
 ```bash
 python scripts/extract_material_vertices.py \
-  --grd /path/to/your_project/n20_current_dfise.grd \
+  --grd <path-to-grd> \
+  --target-region <target-region> \
+  --target-material <target-material> \
+  --xmin <xmin> --xmax <xmax> --ymin <ymin> --ymax <ymax> \
+  --json-out <material_vertices.json> \
+  --csv-out <material_vertices.csv>
+
+python scripts/measure_material_features.py \
+  --input <material_vertices.json> \
+  --json-out <material_features.json> \
+  --csv-out <material_features.csv>
+```
+
+### Real Example
+
+This example comes from the previously validated `FDSOI_RLPX_v2` workflow and is kept here only as a concrete reference.
+
+```bash
+python scripts/extract_material_vertices.py \
+  --grd /home/tcad/STDB/FDSOI_RLPX_v2/n20_current_dfise.grd \
   --target-region Nitride_1.2 \
   --target-material Nitride \
   --xmin -0.031 --xmax 0.0 --ymin 0.01 --ymax 0.0225 \
@@ -188,4 +211,3 @@ The feature JSON contains:
 ## License
 
 MIT
-
